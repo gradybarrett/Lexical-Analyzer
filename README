@@ -1,0 +1,20 @@
+This program produces a report of the lexemes found in a text code, the number of times
+that each lexeme occurs, and the token class for each. The report is based on the
+following regular expression for the token classes:
+
+  keyword ? if | else | for | do | while | switch | case | default | break | return
+  identifier ? letter ( letter | digit ) *
+  int_literal ? digit digit *
+  real_literal ? int_literal . int_literal | . int_literal
+  string_literal ? "str"
+  special ? ( | ) | [ | ] | + | - | = | , | ; | { | } | & | * | /
+
+  digit ? 0|1|2|3|4|5|6|7|8|9
+  letter ? a|b|c|...|z|A|B|C|...|Z
+  whitespace ? BLANK | NEWLINE | RETURN | TAB
+  character ? letter | digit | special | whitespace
+  str ? character *  
+
+This code can be run by compiling LexicalAnalyzer.cpp and test.cpp together then running
+the resulting executable with a command line argument that specifies the code text file
+to be analyzed.
