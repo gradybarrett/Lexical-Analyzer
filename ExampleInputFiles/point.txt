@@ -1,0 +1,57 @@
+//point.cpp
+//Grady Barrett
+//10/4/10
+//In class Point class
+
+#include <iostream>
+using std::string;
+using std::cout;
+
+#include <cmath>
+using std::sqrt;
+using std::pow;
+
+#include<iomanip>
+using std::setfill;
+using std::setw;
+
+#include "Point.h"
+
+Point::Point(){
+	x = 0;
+	y = 0;
+}
+
+Point::Point(int xpnt, int ypnt){
+	x = xpnt;
+	y = ypnt;
+}
+
+int Point::getX(){
+	return x;
+}
+
+int Point::setX(int pntx){
+	x = pntx;
+	return x;
+}
+
+int Point::getY(){
+	return y;
+}
+
+int Point::setY(int pnty){
+	y = pnty;
+	return y;
+}
+
+double Point::distFromOrigin(int pntx, int pnty){
+	(double) pntx;
+	(double) pnty;
+	double distance = sqrt(pow(pntx, 2.0)+pow(pnty, 2.0));
+	return distance;
+}
+
+void Point::toString(){
+	cout<< "(" << x << "," << y << ")";
+}
